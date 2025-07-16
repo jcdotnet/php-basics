@@ -7,22 +7,24 @@ use App\Person;
 
 final class PersonTest extends TestCase
 {
-    public function testGetFullNameIsFirstNameAndSurname(): void
-    {
-        $person = new Person;
+    private Person $person;
 
-        $person->setFirstName('Teresa');
-        $person->setSurname('Green');
-
-        $this->assertSame('Teresa Green', $person->getFullName());
+    protected function setUp(): void {
+        $this->person = new Person();
     }
 
-    public function testFullNameIsFirstNameWhenNoSurname(): void
-    {
-        $person = new Person;
+    public function testGetFullNameIsFirstNameAndSurname(): void {
 
-        $person->setFirstName('Teresa');
+        $this->person->setFirstName('Teresa');
+        $this->person->setSurname('Green');
 
-        $this->assertSame('Teresa', $person->getFullName());
+        $this->assertSame('Teresa Green', $this->person->getFullName());
+    }
+
+    public function testFullNameIsFirstNameWhenNoSurname(): void  {
+
+        $this->person->setFirstName('Teresa');
+
+        $this->assertSame('Teresa', $this->person->getFullName());
     }
 }
