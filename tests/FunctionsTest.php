@@ -3,19 +3,21 @@
 // declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 final class FunctionsTest extends TestCase {
 
-    public function testAddPositiveIntegers(): void {
-        $this->assertSame(5, addIntegers(2, 3));
+    public static function additionProvider(): array {
+        return [
+            'positive integers' => [2, 3, 5],
+            'negative integers' => [-2, -3, -5],
+            'zero and integer'  => [3, 0, 3],
+        ];
     }
-    
-    public function testAddNegativeIntegers(): void {
-        $this->assertSame(-5, addIntegers(-2, -3));
-    }
-    
-    public function testZeroToInteger(): void {
-        $this->assertSame(3, addIntegers(3, 0));
+
+    #[DataProvider('additionProvider')]
+    public function testAddIntegers(int $a, int $b, int $expected): void {
+        $this->assertSame($expected, addIntegers($a, $b));
     }
 
     public function testAddingIsCommutative(): void
