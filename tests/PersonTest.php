@@ -16,4 +16,13 @@ final class PersonTest extends TestCase
 
         $this->assertSame('Teresa Green', $person->getFullName());
     }
+
+    public function testFullNameIsFirstNameWhenNoSurname(): void
+    {
+        $person = new Person;
+
+        $person->setFirstName('Teresa');
+
+        $this->assertSame('Teresa', $person->getFullName());
+    }
 }
