@@ -26,7 +26,7 @@ final class TodoManagerTest extends TestCase
 
     public function testTaskIsAddedToList(): void {
         
-        $task = new Task();
+        $task = new Task('Buy milk');
 
         $this->manager->add($task);
 
