@@ -6,5 +6,8 @@
         "files": [
             "lib/functions.php"
         ]
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.6"
     }
 }

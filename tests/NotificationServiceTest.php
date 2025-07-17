@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
+// use PHPUnit\Framework\TestCase;
+use Mockery\Adapter\Phpunit\MockeryTestCase;
 
-final class NotificationServiceTest extends TestCase
+final class NotificationServiceTest extends MockeryTestCase
 {
     public function testNotificationIsSent(): void
     {
@@ -53,4 +54,32 @@ final class NotificationServiceTest extends TestCase
 
         $this->assertTrue($service->sendNotification('test@example.com', 'Hi'));
     }
+
+    public function testMailerIsCalledCorrectlyWithMockery(): void
+    {
+        $mailer = Mockery::mock(Mailer::class);
+
+        $mailer->shouldReceive('sendEmail')
+               ->once()
+               ->with('test@example.com', 'New Notification', 'Hi')
+               ->andReturn(true);
+
+        $service = new NotificationService($mailer);
+
+        $this->assertTrue($service->sendNotification('test@example.com', 'Hi'));
+    } 
+    
+    public function testMailerIsCalledCorrectlyWithMockerySpy(): void
+    {
+        $mailer = Mockery::spy(Mailer::class);
+
+        $service = new NotificationService($mailer);
+
+        $service->sendNotification('test@example.com', 'Hello');
+
+        $mailer->shouldHaveReceived('sendEmail')
+               ->once()
+               ->with('test@example.com', 'New Notification', 'Hello');
+    }
+
 }
