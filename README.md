@@ -1,14 +1,11 @@
-# PHP Lab 🧪
+# PHP Lab
 
-This repository is part of my continuous learning journey. Here, I experiment with new PHP features, test different architectural patterns, and host some of my personal projects or legacy implementations to keep my skills up to date.
+This repository is where I track my continuous learning and technical evolution with PHP. 
 
-## 📂 Projects & Labs
-
-* [Laravel Personal Website](./laravel/personal-site)
-
-### 🚀 Exploration
-*   **PHP Features:** Testing new language features.
-*   **Best Practices:** Implementation of clean code patterns and best coding practices.
+### Projects
+* [**PHP Features:**](./language/features): Language features and updates.
+* [**Laravel Personal Website (Archive)**](./laravel/personal-site)
+* [**WordPress**](./wordpress): Themes, plugins, and legacy implementations.
 
 ---
-*Part of my broader "Lab Series" covering .NET, Java/Spring, C++, and modern Web Development.*
+*I keep similar labs for .NET, Java/Spring, C++, and modern web development.*
