@@ -1,0 +1,20 @@
+Tema: themeforest-winery-template
+Conversión a WP.
+Hecho:
+
+HEADER:
+1) LOGO: En personalizar -> Identidad del sitio se puede personalizar el logo inicial (como en muchos temas de WP), y además el logo más pequeñito que aparece en tamaños de pantalla pequeños.
+
+2) MENÚS: Por ahora solo hay un menú en el tema que se llama menú principal y es el del header. Mantiene el formato de bootstrap y ya trae incorporado los tres puntos que abren el modal de la derecha.
+
+PLANTILLA DE PÁGINAS:
+Al crear una nueva página se puede elegir en la parte derecha de atributos de página la plantilla estándar para insertar en contenido manualmente (con una herramienta como visual composer o de la manera que prefiera el usuario), o se puede elegir la plantilla inicio la cual equivale a la página home de la plantilla HTML.
+
+PÁGINA DE PORTADA:
+Todas las páginas menos la de portada tienen una cabecera debajo del menú, si por ejemplo queremos añadir una página de inicio y que sea la de portada tenemos que ir (como en cualquier tema de WP) a ajustes -> lectura -> página frontal muestra -> seleccionamos la página que hemos añadido.
+
+SLIDERS:
+En el menú podemos ver un nuevo apartado "Sliders" donde podemos agregar las slides que queramos que sea vean en el slider principal. Ahora mismo se ve el contenido estático (AWARD WINNING, etc), solo hay que cambiar el código para que se muestren las creadas por el usuario desde "Añadir nueva slide"
+
+BLOG:
+Aquí lo único que he hecho es hacer que se muestren en index.php y single.php las entradas del blog de WP en vez de las de ejemplo. No se ha implementado ni el sidebar, ni las imágenes de las entradas, ni los comentarios... solo quería que el tema tuviera su página single.php para mostrar el contenido de una entrada.
